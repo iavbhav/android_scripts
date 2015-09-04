@@ -1,0 +1,39 @@
+Monkey Avtivities
+
+1. Music player
+2. flash light
+3. Vibration
+4. Backlight
+
+
+
+
+Runtime.getRuntime().exec("echo 125 > /sys/devices/platform/flashlight.0/leds/flashlight/brightness")
+
+opening camera
+adb shell am start -a android.intent.action.MAIN -n com.android.camera/.Camera
+adb shell am start -a android.intent.category.LAUNCHER -n com.android.camera/.Camera
+
+android.intent.category.LAUNCHER
+adb shell am start -a android.intent.category.LAUNCHER -n com.android.camera
+
+adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+
+Plaving song
+
+adb shell am start -a android.intent.action.VIEW -d "file:///sdcard/videos/Aazaadiyan.mp3" -t "audio/*"
+
+
+ADB commands
+adb shell pm list packages
+
+You can pass an Extra with an integer value using the --ei flag to the am start command
+
+Front Camera
+
+adb shell am start -a android.media.action.IMAGE_CAPTURE --ei android.intent.extras.CAMERA_FACING 1
+
+Back Camera
+
+adb shell am start -a android.media.action.IMAGE_CAPTURE --ei android.intent.extras.CAMERA_FACING 0
+
